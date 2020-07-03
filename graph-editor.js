@@ -180,6 +180,16 @@ window.onload = function()
         draw();
     } );
 
+    <!-- GJM (04/01/2020 - clear button -->
+    d3.select("#clear_all_button").on( "click", function ()
+    {
+        graphModel.nodeList().forEach(function(n) {
+          graphModel.deleteNode( n );
+        });
+        save( formatMarkup() );
+        draw();
+    } );
+
     function onControlEnter(saveChange)
     {
         return function()
